@@ -11,7 +11,7 @@ INSTRUCTIONS:
 */
 
 
-const myElement = document.querySelector("#myelement");
+const myElement = document.querySelector(".a11ytest");
 let done = false;
 
 const observer = new MutationObserver(mutations => {
