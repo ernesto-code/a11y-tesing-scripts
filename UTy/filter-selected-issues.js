@@ -15,16 +15,20 @@ for (let row of rows) {
 let filterButton = document.createElement("button");
 filterButton.innerHTML = "Filter";
 filterButton.onclick = function() {
-  for (let row of rows) {
-    let checkbox = row.querySelector("input[type='checkbox']");
-    if (!checkbox.checked) {
-      row.style.display = "none";
-    } else {
-      row.style.display = "table-row";
-    }
+let filteredRows = [];
+for (let row of rows) {
+  let checkbox = row.querySelector("input[type='checkbox']");
+  if (!checkbox.checked) {
+    filteredRows.push(row);
   }
+}
+for (let row of filteredRows) {
+  row.style.display = "none";
+}
+issuesCount = rows.length - filteredRows.length;
+itemsAmount.innerHTML = 'Showing '+issuesCount+' for <b>'+ selectedComp + '</b> component.';
+
 };
-table.parentNode.insertBefore(filterButton, table.nextSibling);
 
 // Agregar un botón Clear
 let clearButton = document.createElement("button");
@@ -35,5 +39,26 @@ clearButton.onclick = function() {
     checkbox.checked = false;
     row.style.display = "table-row";
   }
+  // Actualizar el número de elementos y el contenido del elemento itemsAmount
+  issuesCount = rows.length;
+  itemsAmount.innerHTML = 'Showing '+issuesCount+' for <b>'+ selectedComp + '</b> component.';
 };
-table.parentNode.insertBefore(clearButton, filterButton.nextSibling);
+
+// Agregar contenedor para los botones y fijarlos al principio de la tabla
+let buttonContainer = document.createElement("div");
+buttonContainer.appendChild(filterButton);
+buttonContainer.appendChild(clearButton);
+table.parentNode.insertBefore(buttonContainer, table);
+
+// Ocultar el elemento de paginación
+let paginationDiv = table.nextElementSibling;
+if (paginationDiv && paginationDiv.classList.contains("responsive-table-pagination")) {
+  paginationDiv.style.display = "none";
+}
+
+// Agregar un elemento para mostrar la cantidad de elementos que se están mostrando
+let issuesCount = rows.length;
+let selectedComp = "Selected Component";
+let itemsAmount = document.createElement("p");
+itemsAmount.innerHTML = 'Showing '+issuesCount+' for <b>'+ selectedComp + '</b> component.';
+buttonContainer.insertBefore(itemsAmount, buttonContainer.firstChild);
