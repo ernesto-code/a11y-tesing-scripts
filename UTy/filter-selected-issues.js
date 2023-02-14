@@ -62,3 +62,4 @@ let selectedComp = "Selected Component";
 let itemsAmount = document.createElement("p");
 itemsAmount.innerHTML = 'Showing '+issuesCount+' for <b>'+ selectedComp + '</b> component.';
 buttonContainer.insertBefore(itemsAmount, buttonContainer.firstChild);
+
