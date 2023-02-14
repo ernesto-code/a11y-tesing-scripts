@@ -1,4 +1,5 @@
 // BOLD TITLES in platforms
+
 var index;
 var first;
 var second;

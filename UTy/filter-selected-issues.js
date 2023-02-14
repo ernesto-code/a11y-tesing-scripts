@@ -43,6 +43,7 @@ clearButton.onclick = function() {
   issuesCount = rows.length;
   itemsAmount.innerHTML = 'Showing '+issuesCount+' for <b>'+ selectedComp + '</b> component.';
 };
+<<<<<<< .mine
 
 // Agregar contenedor para los botones y fijarlos al principio de la tabla
 let buttonContainer = document.createElement("div");
@@ -63,3 +64,25 @@ let itemsAmount = document.createElement("p");
 itemsAmount.innerHTML = 'Showing '+issuesCount+' for <b>'+ selectedComp + '</b> component.';
 buttonContainer.insertBefore(itemsAmount, buttonContainer.firstChild);
 
+=======
+
+// Agregar contenedor para los botones y fijarlos al principio de la tabla
+let buttonContainer = document.createElement("div");
+buttonContainer.appendChild(filterButton);
+buttonContainer.appendChild(clearButton);
+table.parentNode.insertBefore(buttonContainer, table);
+
+// Ocultar el elemento de paginación
+let paginationDiv = table.nextElementSibling;
+if (paginationDiv && paginationDiv.classList.contains("responsive-table-pagination")) {
+  paginationDiv.style.display = "none";
+}
+
+// Agregar un elemento para mostrar la cantidad de elementos que se están mostrando
+let issuesCount = rows.length;
+let selectedComp = "Selected Component";
+let itemsAmount = document.createElement("p");
+itemsAmount.innerHTML = 'Showing '+issuesCount+' for <b>'+ selectedComp + '</b> component.';
+buttonContainer.insertBefore(itemsAmount, buttonContainer.firstChild);
+
+>>>>>>> .theirs
