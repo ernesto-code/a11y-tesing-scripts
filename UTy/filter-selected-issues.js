@@ -26,7 +26,7 @@ filterButton.onclick = function() {
     row.style.display = "none";
   }
   issuesCount = rows.length - filteredRows.length;
-  itemsAmount.innerHTML = 'Showing '+issuesCount+' component.';
+  itemsAmount.innerHTML = 'Showing '+issuesCount+' issues.';
 };
 
 // Agregar un botón Clear
@@ -39,7 +39,7 @@ clearButton.onclick = function() {
     row.style.display = "table-row";
   }
   issuesCount = rows.length;
-  itemsAmount.innerHTML = 'Showing '+issuesCount+' component.';
+  itemsAmount.innerHTML = 'Showing '+issuesCount+' issues.';
 };
 
 // Agregar contenedor para los botones y fijarlos al principio de la tabla
@@ -58,7 +58,7 @@ if (paginationDiv && paginationDiv.classList.contains("responsive-table-paginati
 let issuesCount = rows.length;
 let selectedComp = "Selected Component";
 let itemsAmount = document.createElement("p");
-itemsAmount.innerHTML = 'Showing '+issuesCount+' component.';
+itemsAmount.innerHTML = 'Showing '+issuesCount+' issues.';
 buttonContainer.insertBefore(itemsAmount, buttonContainer.firstChild);
 
 // Agregar el checkbox a la primera fila de la tabla y ocultarlo visualmente
