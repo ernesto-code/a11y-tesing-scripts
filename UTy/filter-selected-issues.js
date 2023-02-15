@@ -1,8 +1,8 @@
 // Encontrar la tabla
 let table = document.querySelector(".responsive-table");
 
-// Agregar una columna con checkbox al inicio de cada fila
-let rows = table.querySelectorAll("tbody tr");
+// Agregar una columna con checkbox al inicio de cada fila, excluyendo la primera fila
+let rows = table.querySelectorAll("tbody tr:not(:first-child)");
 for (let row of rows) {
   let checkbox = document.createElement("input");
   checkbox.type = "checkbox";
@@ -15,19 +15,18 @@ for (let row of rows) {
 let filterButton = document.createElement("button");
 filterButton.innerHTML = "Filter";
 filterButton.onclick = function() {
-let filteredRows = [];
-for (let row of rows) {
-  let checkbox = row.querySelector("input[type='checkbox']");
-  if (!checkbox.checked) {
-    filteredRows.push(row);
+  let filteredRows = [];
+  for (let row of rows) {
+    let checkbox = row.querySelector("input[type='checkbox']");
+    if (!checkbox.checked) {
+      filteredRows.push(row);
+    }
   }
-}
-for (let row of filteredRows) {
-  row.style.display = "none";
-}
-issuesCount = rows.length - filteredRows.length;
-itemsAmount.innerHTML = 'Showing '+issuesCount+' for <b>'+ selectedComp + '</b> component.';
-
+  for (let row of filteredRows) {
+    row.style.display = "none";
+  }
+  issuesCount = rows.length - filteredRows.length;
+  itemsAmount.innerHTML = 'Showing '+issuesCount+' component.';
 };
 
 // Agregar un botón Clear
@@ -39,9 +38,8 @@ clearButton.onclick = function() {
     checkbox.checked = false;
     row.style.display = "table-row";
   }
-  // Actualizar el número de elementos y el contenido del elemento itemsAmount
   issuesCount = rows.length;
-  itemsAmount.innerHTML = 'Showing '+issuesCount+' for <b>'+ selectedComp + '</b> component.';
+  itemsAmount.innerHTML = 'Showing '+issuesCount+' component.';
 };
 
 // Agregar contenedor para los botones y fijarlos al principio de la tabla
@@ -60,5 +58,14 @@ if (paginationDiv && paginationDiv.classList.contains("responsive-table-paginati
 let issuesCount = rows.length;
 let selectedComp = "Selected Component";
 let itemsAmount = document.createElement("p");
-itemsAmount.innerHTML = 'Showing '+issuesCount+' for <b>'+ selectedComp + '</b> component.';
+itemsAmount.innerHTML = 'Showing '+issuesCount+' component.';
 buttonContainer.insertBefore(itemsAmount, buttonContainer.firstChild);
+
+// Agregar el checkbox a la primera fila de la tabla y ocultarlo visualmente
+let firstRow = table.querySelector("tbody tr:first-child");
+let firstCheckbox = document.createElement("input");
+firstCheckbox.type = "checkbox";
+firstCheckbox.setAttribute("hidden", true);
+let firstTD = document.createElement("td");
+firstTD.appendChild(firstCheckbox);
+firstRow.insertBefore(firstTD, firstRow.firstChild);
