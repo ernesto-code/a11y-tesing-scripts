@@ -8,18 +8,37 @@ elementos como el Accessibility Insight ext
 const bodyElement = document.querySelector('body')
 
 // Adding container for the identification divs
-const divContainer = document.creat
+const divContainer = document.createElement("div")
+divContainer.style.position = 'absolute !important;'
+divContainer.style.top = '0 !important;'
+divContainer.style.left = '0 !important;'
+divContainer.style.visibility = 'visible !important;'
+
+
 // Creating the identification divs according to the HTML element
+const divIdentifier = document.createElement("div")
+divIdentifier.style.width = "200px"
+divIdentifier.style.height = "200px"
+divIdentifier.style.backgroundColor = "#777777"
+
+//divIdentifier.innerHTML = { `<p>Identifier</p>`}
+
 // Adding divs to container
+divContainer.appendChild(divIdentifier)
+
 // Insering container in DOM
 
+bodyElement.appendChild(divContainer)
+
+
+/*
 position: absolute !important;
     z-index: 2147483646 !important;
     top: 0 !important;
     left: 0 !important;
     overflow: visible !important;
     pointer-events: none !important;
-    visibility: visible !important;
+    visibility: visible !important; */
 
 
 
