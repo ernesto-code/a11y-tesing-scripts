@@ -1,3 +1,5 @@
+// This script has been depricated, use the 'filter by slot' instead
+
 // Version 1.0
 
 // Filter Layout
