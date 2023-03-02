@@ -1,4 +1,5 @@
 
+    // Version 1.0
         const applyStyle = (elm, color)=>{
             elm.style.cssText = `
                 width: fit-content;

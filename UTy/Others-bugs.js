@@ -1,3 +1,4 @@
+// Version 1.0
 
 const targetElement = document.querySelector("#issueListTitle")
 const checkbox = document.createElement('input');

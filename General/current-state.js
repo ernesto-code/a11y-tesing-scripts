@@ -8,6 +8,8 @@
 
 */
 
+// Version 1.0
+
 //  SCRIPT 
 
 const button = document.querySelector(".a11ybutton")

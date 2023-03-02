@@ -1,5 +1,7 @@
 // This scripts prints in console the font-size,font-weight and color of the tageted element that has been right-clicked on the page. The element might display a red background for a half of a second.
 
+// Version 1.0
+
     document.addEventListener("contextmenu", (event) => {
         const targetElement = event.target
         const bg = targetElement.style.background

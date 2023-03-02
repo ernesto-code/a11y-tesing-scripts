@@ -1,3 +1,5 @@
+// Version 1.0
+
 // After specifying the testcycles ID on the array it will return the total time logged for those testcycles
 
 const cyclesIds = ['389837','389841']

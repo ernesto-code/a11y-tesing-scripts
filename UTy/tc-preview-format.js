@@ -1,3 +1,6 @@
+// Version 1.0
+
+
 // Ensure the preview dialog is displayed before running the script
 
 const info = document.getElementsByClassName('details')

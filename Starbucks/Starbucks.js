@@ -1,3 +1,5 @@
+// Version 1.0
+
 // Filter Layout
 const targetElement = document.querySelector("#issueListTitle")
 const newItem = document.createElement("div")

@@ -1,3 +1,5 @@
+// Version 1.0
+
 // Encontrar la tabla
 let table = document.querySelector(".responsive-table");
 

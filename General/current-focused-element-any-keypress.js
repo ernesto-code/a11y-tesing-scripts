@@ -1,3 +1,5 @@
+// Version 1.0
+
 // This scripts Logs in console which element has 
 
 document.addEventListener("keydown", (event) => {

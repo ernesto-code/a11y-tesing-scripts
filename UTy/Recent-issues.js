@@ -1,3 +1,5 @@
+// Version 1.0
+
 const targetElement = document.querySelector("#issueListTitle")
 const newItem = document.createElement("div")
 const itemsAmount = document.getElementsByTagName("table")[0].nextElementSibling

@@ -10,6 +10,8 @@ INSTRUCTIONS:
 
 */
 
+// Version 1.0
+
 
 const myElement = document.querySelector(".a11ytest");
 let done = false;

@@ -1,3 +1,5 @@
+// Version 1.0
+
 // BOLD TITLES in platforms
 
 var index;

@@ -1,3 +1,5 @@
+// Version 1.0
+
 let obtenerDatos = document.getElementsByTagName("span");
 var result;
 var result2=[];

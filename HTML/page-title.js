@@ -1,3 +1,4 @@
+// Version 1.0
 
         const applyStyle = (elm)=>{
             elm.style.cssText = `
