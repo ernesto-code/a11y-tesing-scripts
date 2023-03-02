@@ -1,4 +1,5 @@
-
+// Version 1.0.1
+        
         const applyStyle = (elm, color)=>{
             elm.style.cssText = `
                 width: fit-content;
@@ -27,4 +28,5 @@
         })
     
     console.clear()
+    console.log(brElements.length + ' br elements found on the page')
             

@@ -9,17 +9,21 @@ const bodyElement = document.querySelector('body')
 
 // Adding container for the identification divs
 const divContainer = document.createElement("div")
-divContainer.style.position = 'absolute !important;'
-divContainer.style.top = '0 !important;'
-divContainer.style.left = '0 !important;'
-divContainer.style.visibility = 'visible !important;'
-
+divContainer.style.position = 'absolute'
+divContainer.style.top = '0'
+divContainer.style.left = '0'
+divContainer.style.visibility = 'visible'
+divContainer.style.zIndex = '2147483646'
+divContainer.style.width = '100%'
+divContainer.style.heigh = '100%'
+divContainer.style.backgroundColor = 'rgba(255,255,255,0.5)'
 
 // Creating the identification divs according to the HTML element
 const divIdentifier = document.createElement("div")
-divIdentifier.style.width = "200px"
-divIdentifier.style.height = "200px"
+divIdentifier.style.width = "100px"
+divIdentifier.style.height = "90vh"
 divIdentifier.style.backgroundColor = "#777777"
+divIdentifier.style.margin = "20px"
 
 //divIdentifier.innerHTML = { `<p>Identifier</p>`}
 
