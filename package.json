@@ -1,0 +1,13 @@
+{
+    "name":"a11y-testing-scripts",
+    "description":"",
+    "version":"0.1.0",
+    "scripts": {
+        "deploy": "serverless deploy",
+        "info": "serverless info"
+    },
+    "devDependencies":{
+        "serverless":"^3.28.1",
+        "serverless-s3-sync":"^3.1.0"
+        }
+    }

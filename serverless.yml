@@ -1,0 +1,46 @@
+service: a11y-scripts
+plugins:
+  - serverless-s3-sync
+custom:
+  serverName: a11y-scripts
+  s3Sync:
+    - bucketName: ${self:custom.serverName}
+      localDir: scripts
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-2
+  stage: prod
+
+resources:
+  Resources:
+    StaticServer:
+      Type: AWS::S3::Bucket
+      Properties:
+        AccessControl: PublicRead
+        BucketName: ${self:custom.serverName}
+
+    StaticServerS3BucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket: 
+          Ref: StaticServer
+        PolicyDocument:
+          Statement:
+            - Sid: PublicReadGetObject
+              Effect: Allow
+              Principal: "*"
+              Action:
+              - s3:GetObject
+              Resource:
+                Fn::Join: [
+                  "", [
+                    "arn:aws:s3:::",
+                    {
+                      "Ref": "StaticServer"
+                    },
+                    "/*"
+                  ]
+                ]
+    

@@ -1,0 +1,24 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: Deployment
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    # - uses: actions/setup-node@v3
+    #   with:
+    #     node-version: 16
+    # - run: npm install
+    - name: Install VPC Plugin and Deploy
+      uses: serverless/github-action@v1.53.0
+      with:
+        args: -c "serverless plugin install --name serverless-s3-sync@2.0.0 && serverless deploy --verbose"
+        entrypoint: /bin/bash
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        SLS_DEBUG: 1
