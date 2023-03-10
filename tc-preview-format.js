@@ -1,8 +1,4 @@
-// Version 1.0
-
-
-// Ensure the preview dialog is displayed before running the script
-
+// Version 1.1
 // Ensure the preview dialog is displayed before running the script
 const details = document.getElementsByClassName('details')[0];
 details.style.setProperty('white-space', 'pre-wrap', 'important');
