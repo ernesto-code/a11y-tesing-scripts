@@ -1,3 +1,7 @@
+//Here's a JavaScript script that you can paste into the browser's console. 
+// This script will highlight the focused element with a box-shadow and outline when navigating with the Tab key. 
+// Additionally, it will log the currently focused element in the console.
+
 (function() {
     let outlineColors = ['red', 'green', 'blue', 'yellow', 'orange', 'purple'];
     let shadowColors = ['rgba(255, 0, 0, 0.5)', 'rgba(0, 255, 0, 0.5)', 'rgba(0, 0, 255, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 165, 0, 0.5)', 'rgba(128, 0, 128, 0.5)'];
